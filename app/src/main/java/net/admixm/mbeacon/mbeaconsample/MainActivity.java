@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
      * 추가로 다른 비콘도 스캔하고 싶을 때만 ADMXBeaconAdServiceLib.init()시에 파라미터로 넣어준다.
      */
     private List<String> beaconUuidList = null;
+    /**
+     * applicationCode 는 '애드믹스엠 홀딩스'에서 지정해준 앱 넘버로 설정
+     */
+    private String applicationCode;
 
 
     @Override
@@ -42,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
         beaconUuidList.add("7b3f5509-7cf1-4637-a87a-5d44e43cdbd7");
         beaconUuidList.add("73a8edce-1227-9db7-18ff-6243e19db53d");
         beaconUuidList.add("c276ea6f-7de8-444a-9904-7ead820de7d9");
+
         // 광고확인 요청 유무 설정
-        // 'false'로 설정하면 길거리 광고를 계속해서 수신한다.(테스트용)
+        // 'false'로 설정하면 길거리 광고를 계속해서 수신한다.
         ADMXBeaconAdServiceLib.setSendingAdResult(this, true);
         // 로그캣 정보표시 유무 설정
-        // 실제 프로젝트에 적용 시, 'false'로 설정한다.
-        ADMXBeaconAdServiceLib.setDebugMode(this, true);
+        // 'true'로 설정하면 로그캣에 mBeacon 라이브러리 로그를 출력한다.
+        ADMXBeaconAdServiceLib.setDebugMode(this, false);
 
         // 단말기에 앱이 필요한 권한들을 요청
         // 사용자가 이전에 한번이라도 권한 요청을 거부했다면,
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                                 ADMXLog.d(MainActivity.this, TAG, "사용자가 권한 요청을 취소하였습니다.");
                             }
                         });
+
         // 이미 모든 권한을 획득한 경우
         // (Android Marshmallow 버전 이상일 경우만 해당)
         if (permissionResult == ADMXPermissionRequester.ALREADY_GRANTED) {
@@ -73,8 +79,7 @@ public class MainActivity extends AppCompatActivity {
             // 단말기가 앱에 대한 모든 권한을 갖고 있는지 검사
             if (ADMXBeaconAdServiceLib.checkSelfAllPermissions(this, ADMXBeaconAdServiceLib.PERMISSIONS)) {
                 // 비콘 UUID 리스트와 앱 고유번호 값을 파라미터로 설정하고, 비콘 스캔 서비스 시작
-                // 앱 고유번호는 '애드믹스엠 홀딩스'에서 지정해준 숫자로 설정
-                ADMXBeaconAdServiceLib.init(this, beaconUuidList, "3");
+                ADMXBeaconAdServiceLib.init(this, beaconUuidList, applicationCode);
             }
         }
         // Android Marshmallow 버전 미만일 경우
@@ -84,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
             // 비콘 UUID 리스트와 앱 고유번호 값을 파라미터로 설정하고, 비콘 스캔 서비스 시작
             // 앱 고유번호는 '애드믹스엠 홀딩스'에서 지정해준 숫자로 설정
-            ADMXBeaconAdServiceLib.init(this, beaconUuidList, "3");
+            ADMXBeaconAdServiceLib.init(this, beaconUuidList, applicationCode);
         }
         // 권한 취득을 요청한 경우
         // 권한취득 결과(onRequestPermissionsResult())에서 권한 요청에 대한 응답을 받는다.
@@ -126,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                     if (ADMXBeaconAdServiceLib.checkSelfAllPermissions(this, ADMXBeaconAdServiceLib.PERMISSIONS)) {
                         // 비콘 UUID 리스트와 앱 고유번호 값을 파라미터로 설정하고, 비콘 스캔 서비스 시작
                         // 앱 고유번호는 '애드믹스엠 홀딩스'에서 지정해준 숫자로 설정
-                        ADMXBeaconAdServiceLib.init(this, beaconUuidList, "3");
+                        ADMXBeaconAdServiceLib.init(this, beaconUuidList, applicationCode);
                     }
                 } else {
                     ADMXLog.d(this, TAG, "사용자가 권한 요청을 거부하였습니다.");
