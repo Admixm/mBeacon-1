@@ -32,6 +32,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'org.altbeacon:android-beacon-library:2.7@aar'
     compile 'org.apache.httpcomponents:httpcore:4.4.5'
+
     compile 'net.admixm.mbeacon:admixmbeacon-release:1.95@aar'
     compile 'com.cosquare.android.lib.trainscan:CSTrainScanModule-release:1.1@aar'
 }
