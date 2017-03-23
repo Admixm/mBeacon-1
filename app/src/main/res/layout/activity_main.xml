@@ -5,7 +5,7 @@
              android:layout_height="match_parent"
              android:orientation="vertical"
               android:layout_margin="10dp"
-             tools:context="net.admixm.mBeacon.MainActivity">
+             tools:context="net.admixm.mbeacon.MainActivity">
 
     <ImageView
         android:id="@+id/image_view_admixm"

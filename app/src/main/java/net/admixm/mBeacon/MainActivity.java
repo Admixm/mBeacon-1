@@ -1,16 +1,14 @@
-package net.admixm.mBeacon;
+package net.admixm.mbeacon;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import net.admixm.mbeacon.ADMXBeaconAdServiceLib;
-
 import net.admixm.mbeacon.mbeaconsample.R;
+import net.admixm.mbeacon.utils.ADMXHelper;
 import net.admixm.mbeacon.utils.ADMXLog;
 import net.admixm.mbeacon.utils.ADMXPermissionRequester;
 
@@ -25,8 +23,7 @@ public class MainActivity extends AppCompatActivity
     private List< String > beaconUuidList = null;
 
     //applicationCode 는 '애드믹스엠 홀딩스'에서 지정해준 앱 넘버로 설정
-    private String applicationCode = "20";
-
+    private String applicationCode = "23";
 
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -35,10 +32,10 @@ public class MainActivity extends AppCompatActivity
         setContentView( R.layout.activity_main );
 
         initLayout( );
-        initADMXLibrary( this );
+        initADMXLibrary( );
     }
 
-    private void initADMXLibrary( Context context )
+    private void initADMXLibrary( )
     {
         // 스캔할 비콘 uuid 리스트를 작성합니다.
         beaconUuidList = new ArrayList<>( );
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity
         // 단말기에 앱이 필요한 권한들을 요청
         // 사용자가 이전에 한번이라도 권한 요청을 거부했다면,
         // 다시한번 권한 취득을 위해 권한요청 이유를 알리는 AlertDialog 제목/내용을 입력한다.
-        int permissionResult = new ADMXPermissionRequester.Builder( MainActivity.this )
+        int permissionResult = new ADMXPermissionRequester.Builder( this )
                 .setTitle( "권한 요청" )
                 .setMessage( "앱의 원활한 기능 사용을 위해 단말기의 특정 권한이 필요합니다. 계속 진행하시겠습니까?" )
                 .setPositiveButtonName( "네" )
