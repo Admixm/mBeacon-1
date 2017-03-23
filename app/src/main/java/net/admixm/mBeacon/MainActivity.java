@@ -1,12 +1,16 @@
-package net.admixm.mbeacon.mbeaconsample;
+package net.admixm.mBeacon;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import net.admixm.mbeacon.ADMXBeaconAdServiceLib;
+
+import net.admixm.mbeacon.mbeaconsample.R;
 import net.admixm.mbeacon.utils.ADMXLog;
 import net.admixm.mbeacon.utils.ADMXPermissionRequester;
 
@@ -21,7 +25,7 @@ public class MainActivity extends AppCompatActivity
     private List< String > beaconUuidList = null;
 
     //applicationCode 는 '애드믹스엠 홀딩스'에서 지정해준 앱 넘버로 설정
-    private String applicationCode = "발급받은 앱 코드 입력";
+    private String applicationCode = "20";
 
 
     @Override
@@ -30,11 +34,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
 
-        /**
-         * 'null'로 설정하면 디폴트 UUID를 가진 비콘만 스캔한다.
-         * (디폴트 UUID: e2c56db5-dffb-48d2-b060-d0f5a71096e0)
-         * 추가로 다른 비콘도 스캔하고 싶을 때만 ADMXBeaconAdServiceLib.init()시에 파라미터로 넣어준다.
-         */
+        initLayout( );
+        initADMXLibrary( this );
+    }
+
+    private void initADMXLibrary( Context context )
+    {
+        // 스캔할 비콘 uuid 리스트를 작성합니다.
         beaconUuidList = new ArrayList<>( );
         beaconUuidList.add( "6bed2915-45e9-45fd-885a-7c648112119a" );
         beaconUuidList.add( "B9407F30-F5F8-466E-AFF9-25556B57FE6D" );
@@ -43,13 +49,14 @@ public class MainActivity extends AppCompatActivity
         beaconUuidList.add( "73a8edce-1227-9db7-18ff-6243e19db53d" );
         beaconUuidList.add( "c276ea6f-7de8-444a-9904-7ead820de7d9" );
 
-        // 광고확인 요청 유무 설정
-        // 'false'로 설정하면 광고를 계속해서 수신한다.
+        // 광고 수신 결과를 서버로 보낼지 여부를 설정합니다. false로 설정하면 광고를 계속해서 받을 수 있습니다.
         ADMXBeaconAdServiceLib.setSendingAdResult( this, true );
 
-        // 로그캣 정보표시 유무 설정
-        // 'true'로 설정하면 로그캣에 mBeacon 라이브러리 로그를 출력한다.
-        ADMXBeaconAdServiceLib.setDebugMode( this, false );
+        // 로그캣에 mBeacon 로그를 출력할 지 여부를 설정합니다.
+        ADMXBeaconAdServiceLib.setDebugMode( this, true );
+
+        // 피크 타임 (오전 7시 30분 ~ 오전 9시 30분 / 오후 5시 30분 오후 7시 30분) 동안 블루투스를 자동으로 켤지 여부를 설정합니다.
+        ADMXBeaconAdServiceLib.enableBluetoothOnPeaktime( this, true );
 
 
         // 단말기에 앱이 필요한 권한들을 요청
@@ -153,5 +160,15 @@ public class MainActivity extends AppCompatActivity
                 ADMXLog.e( this, TAG, "권한취득 결과값이 없습니다." );
             }
         }
+    }
+
+
+    protected void initLayout( )
+    {
+        TextView versionName = ( TextView ) findViewById( R.id.text_view_version_name );
+        versionName.setText( ADMXBeaconAdServiceLib.SDK_VERSION );
+
+        TextView appCode = ( TextView ) findViewById( R.id.text_view_app_no );
+        appCode.setText( applicationCode );
     }
 }

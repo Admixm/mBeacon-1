@@ -1,1 +1,1 @@
-include ':app', ':mBeacon-v17'
+include ':app', ':mBeacon SDK'
