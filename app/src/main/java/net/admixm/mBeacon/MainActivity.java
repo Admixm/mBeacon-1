@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity
         beaconUuidList.add( "73a8edce-1227-9db7-18ff-6243e19db53d" );
         beaconUuidList.add( "c276ea6f-7de8-444a-9904-7ead820de7d9" );
 
-        // 광고 수신 결과를 서버로 보낼지 여부를 설정합니다. false로 설정하면 광고를 계속해서 받을 수 있습니다.
+        // 광고 수신 결과를 서버로 보낼지 여부를 설정합니다.
+        // false로 설정하면 광고를 계속해서 받을 수 있습니다. 디버그 할 때만 사용해주세요
         ADMXBeaconAdServiceLib.setSendingAdResult( this, true );
 
         // 로그캣에 mBeacon 로그를 출력할 지 여부를 설정합니다.
