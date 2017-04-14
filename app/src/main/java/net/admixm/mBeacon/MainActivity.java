@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
     private void initADMXLibrary( )
     {
         // 스캔할 비콘 uuid 리스트를 작성합니다.
-        beaconUuidList = new ArrayList<>( );
+        beaconUuidList = new ArrayList( );
         beaconUuidList.add( "6bed2915-45e9-45fd-885a-7c648112119a" );
         beaconUuidList.add( "B9407F30-F5F8-466E-AFF9-25556B57FE6D" );
         beaconUuidList.add( "e2c56db5-dffb-48d2-b060-d0f5a71096e0" );
@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity
         beaconUuidList.add( "c276ea6f-7de8-444a-9904-7ead820de7d9" );
 
         // 광고 수신 결과를 서버로 보낼지 여부를 설정합니다.
-        // false로 설정하면 광고를 계속해서 받을 수 있습니다. 디버그 할 때만 사용해주세요
+        // false로 설정하면 광고를 계속해서 받을 수 있습니다. 디버그 할 때만 사용해주세요.
         ADMXBeaconAdServiceLib.setSendingAdResult( this, true );
 
-        // 로그캣에 mBeacon 로그를 출력할 지 여부를 설정합니다.
+        // mBeacon 로그를 사용할지 여부를 설정합니다.
         ADMXBeaconAdServiceLib.setDebugMode( this, true );
 
-        // 피크 타임 (오전 7시 30분 ~ 오전 9시 30분 / 오후 5시 30분 오후 7시 30분) 동안 블루투스를 자동으로 켤지 여부를 설정합니다.
-        ADMXBeaconAdServiceLib.enableBluetoothOnPeaktime( this, true );
+        // 화면이 꺼진 채로 광고를 받았을 때 광고를 바로 표시할지 여부를 설정합니다.
+        ADMXBeaconAdServiceLib.enableAutoDisplayOnScreenOff( this, true );
 
 
         // 단말기에 앱이 필요한 권한들을 요청
