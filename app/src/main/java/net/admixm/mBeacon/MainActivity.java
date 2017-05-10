@@ -38,14 +38,17 @@ public class MainActivity extends AppCompatActivity
 
     private void initMBeaconSDK( )
     {
+        final ADMXParameters params = new ADMXParameters();
+        params.ApplicationCode = applicationCode;
+        params.BeaconUUIDList = new ArrayList< >( );
+
         // 스캔할 비콘 uuid 리스트를 작성합니다.
-        final ArrayList beaconUuidList = new ArrayList( );
-        beaconUuidList.add( "6bed2915-45e9-45fd-885a-7c648112119a" );
-        beaconUuidList.add( "B9407F30-F5F8-466E-AFF9-25556B57FE6D" );
-        beaconUuidList.add( "e2c56db5-dffb-48d2-b060-d0f5a71096e0" );
-        beaconUuidList.add( "7b3f5509-7cf1-4637-a87a-5d44e43cdbd7" );
-        beaconUuidList.add( "73a8edce-1227-9db7-18ff-6243e19db53d" );
-        beaconUuidList.add( "c276ea6f-7de8-444a-9904-7ead820de7d9" );
+        params.BeaconUUIDList.add( "6bed2915-45e9-45fd-885a-7c648112119a" );
+        params.BeaconUUIDList.add( "B9407F30-F5F8-466E-AFF9-25556B57FE6D" );
+        params.BeaconUUIDList.add( "e2c56db5-dffb-48d2-b060-d0f5a71096e0" );
+        params.BeaconUUIDList.add( "7b3f5509-7cf1-4637-a87a-5d44e43cdbd7" );
+        params.BeaconUUIDList.add( "73a8edce-1227-9db7-18ff-6243e19db53d" );
+        params.BeaconUUIDList.add( "c276ea6f-7de8-444a-9904-7ead820de7d9" );
 
 
         // 광고 수신 결과를 서버로 보낼지 여부를 설정합니다.
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run( )
             {
-                ADMXBeaconAdServiceLib.init( MainActivity.this, beaconUuidList, applicationCode );
+                ADMXBeaconAdServiceLib.init( MainActivity.this, params );
             }
         } );
     }
