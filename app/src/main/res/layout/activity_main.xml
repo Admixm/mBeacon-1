@@ -68,6 +68,22 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#888888"
+                android:text="Stop mBeacon library" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
 
