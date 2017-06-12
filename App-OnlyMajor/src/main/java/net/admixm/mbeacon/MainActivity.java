@@ -1,5 +1,6 @@
 package net.admixm.mbeacon;
 
+import android.app.admin.DeviceAdminReceiver;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import net.admixm.mbeacon.mbeaconsample.R;
+
 import net.admixm.mbeacon.parameters.ADMXParameters;
-import net.admixm.mbeacon.utils.ADMXLog;
 
 import java.util.ArrayList;
 
@@ -29,9 +30,6 @@ public class MainActivity extends AppCompatActivity
 
     protected void initLayout( )
     {
-        TextView versionName = ( TextView ) findViewById( R.id.text_view_version_name );
-        versionName.setText( ADMXBeaconAdServiceLib.SDK_VERSION );
-
         TextView appCode = ( TextView ) findViewById( R.id.text_view_app_no );
         appCode.setText( APP_NO );
 

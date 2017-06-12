@@ -4,11 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.NonNull;
-
-import net.admixm.mbeacon.utils.ADMXLog;
-import net.admixm.mbeacon.utils.ADMXPermissionRequester;
 
 /**
  * Created by MARi on 2017-04-27.

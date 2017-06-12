@@ -1,1 +1,1 @@
-include ':app', ':mBeacon SDK'
+include ':App-OnlyMajor', ':App-WithMinor'
