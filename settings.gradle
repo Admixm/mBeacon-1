@@ -1,1 +1,1 @@
-include ':App-OnlyMajor', ':App-WithMinor'
+include ':app'

@@ -23,9 +23,7 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:25.+'
 
-    compile (name: 'mBeacon-full-release', ext: 'aar')
-    compile (name: 'CSTrainScanModule-release', ext: 'aar')
-    compile 'com.google.android.gms:play-services-auth:10.2.6'
+    compile (name: 'mBeacon-minor-release', ext: 'aar')
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'org.altbeacon:android-beacon-library:2.9@aar'
 }
