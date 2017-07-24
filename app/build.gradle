@@ -21,7 +21,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.+'
+    //compile 'com.android.support:appcompat-v7:18.+'
 
     compile (name: 'mBeacon-release', ext: 'aar')
     compile 'com.google.code.gson:gson:2.3.1'

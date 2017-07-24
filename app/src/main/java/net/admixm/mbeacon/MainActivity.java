@@ -1,9 +1,8 @@
 package net.admixm.mbeacon;
 
-import android.app.admin.DeviceAdminReceiver;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,9 +11,7 @@ import net.admixm.mbeacon.mbeaconsample.R;
 
 import net.admixm.mbeacon.parameters.ADMXParameters;
 
-import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends Activity
 {
     private String APP_NO = "3";
 
@@ -51,15 +48,6 @@ public class MainActivity extends AppCompatActivity
         // 애드믹스엠 홀딩스에서 발급받은 어플리케이션 코드를 기입합니다.
         params.ApplicationCode = APP_NO;
 
-        // 스캔할 비콘 uuid 리스트를 작성합니다.
-        params.BeaconUUIDList = new ArrayList<>( );
-        params.BeaconUUIDList.add( "6bed2915-45e9-45fd-885a-7c648112119a" );
-        params.BeaconUUIDList.add( "B9407F30-F5F8-466E-AFF9-25556B57FE6D" );
-        params.BeaconUUIDList.add( "e2c56db5-dffb-48d2-b060-d0f5a71096e0" );
-        params.BeaconUUIDList.add( "7b3f5509-7cf1-4637-a87a-5d44e43cdbd7" );
-        params.BeaconUUIDList.add( "73a8edce-1227-9db7-18ff-6243e19db53d" );
-        params.BeaconUUIDList.add( "c276ea6f-7de8-444a-9904-7ead820de7d9" );
-
         ADMXBeaconAdServiceLib.setDebugMode( this, true );
 
         PermissionHelper.activatePermission( this, new Runnable( )
@@ -67,14 +55,28 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run( )
             {
+
                 // mBeacon SDK를 초기화합니다.
-                ADMXBeaconAdServiceLib.init( MainActivity.this, params );
+                ADMXBeaconAdServiceLib.init( MainActivity.this, params, new ADMXLocationAgreementListener( )
+                {
+                    @Override
+                    public void onSuccess( )
+                    {
+                        Log.i( "TAG", "비콘 서비스가 시작됩니다." );
+                    }
+
+                    @Override
+                    public void onDecline( )
+                    {
+                        Log.i( "TAG", "사용자가 비콘 서비스에 동의하지 않았습니다." );
+                    }
+                } );
             }
         } );
     }
 
     @Override
-    public void onRequestPermissionsResult( int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults )
+    public void onRequestPermissionsResult( int requestCode, String[] permissions, int[] grantResults )
     {
         PermissionHelper.onRequestPermissionsResult( this, requestCode, grantResults );
     }

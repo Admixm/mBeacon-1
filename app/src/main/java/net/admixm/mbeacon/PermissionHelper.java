@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import android.os.Looper;
-import android.support.annotation.NonNull;
 
 
 /**
@@ -69,7 +67,7 @@ public class PermissionHelper
 
     }
 
-    public static void onRequestPermissionsResult( Context context, int requestCode, @NonNull int[] grantResults )
+    public static void onRequestPermissionsResult( Context context, int requestCode, int[] grantResults )
     {
 
         if ( requestCode == ADMXBeaconAdServiceLib.PERMISSION_REQUEST_CODE )
