@@ -2,6 +2,7 @@ package net.admixm.mbeacon;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,7 @@ import net.admixm.mbeacon.mbeaconsample.R;
 
 import net.admixm.mbeacon.parameters.ADMXParameters;
 
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
 {
     private String APP_NO = "3";
 

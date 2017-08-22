@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:orientation="vertical"
-              android:layout_margin="10dp"
-             tools:context="net.admixm.mbeacon.MainActivity">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context="net.admixm.mbeacon.MainActivity">
 
     <ImageView
         android:id="@+id/image_view_admixm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo"
         android:scaleType="fitCenter"
+        android:src="@drawable/logo"
         android:visibility="visible"/>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:text="SDK Version : "
                 android:textColor="#888888"
-                android:text="SDK Version : " />
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/text_view_version_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
+                android:text="(number)"
                 android:textColor="#000000"
-                android:text="(number)" />
+                android:textSize="18sp"
+                android:textStyle="normal|bold"/>
 
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:text="Application No : "
                 android:textColor="#888888"
-                android:text="Application No : " />
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/text_view_app_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="normal|bold"
+                android:text="(number)"
                 android:textColor="#000000"
-                android:text="(number)" />
+                android:textSize="18sp"
+                android:textStyle="normal|bold"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <Button
                 android:id="@+id/button_stop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:text="Stop mBeacon library"
                 android:textColor="#888888"
-                android:text="Stop mBeacon library" />
+                android:textSize="18sp"/>
 
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </LinearLayout>
