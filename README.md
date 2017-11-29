@@ -1,7 +1,7 @@
 # mBeacon
 mBeacon SDK
 
-```ANDROID
+```Gradle
 dependencies {
     compile 'net.admixm.mBeacon:general:+'
 }
