@@ -30,6 +30,7 @@ dependencies {
 </br>
 </br>
 </br>
+
 ### Proguard
 
 mBeacon SDK는 Android 공식 proguard를 지원합니다.
