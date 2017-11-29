@@ -1,7 +1,7 @@
 # mBeacon
 mBeacon SDK
 
-```Android
+```ANDROID
 dependencies {
     compile 'net.admixm.mBeacon:general:+'
 }
