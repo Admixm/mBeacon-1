@@ -8,9 +8,6 @@ mBeacon SDK는 지하철에 설치된 비콘에서의 Request를 받아 AD를 �
 </br>
 </br>
 </br>
-</br>
-</br>
-</br>
 ### 시작하기
 
 mBeacon SDK는 jCenter를 통해 배포되고 있습니다.
@@ -27,9 +24,7 @@ dependencies {
 </br>
 </br>
 </br>
-</br>
-</br>
-</br>
+
 
 ### Proguard
 
