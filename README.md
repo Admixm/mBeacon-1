@@ -11,7 +11,7 @@ mBeacon SDK는 지하철에 설치된 비콘에서의 Request를 받아 AD를 �
 
 
 
-###시작하기
+### 시작하기
 
 mBeacon SDK는 jCenter를 통해 배포되고 있습니다.
 
@@ -25,7 +25,7 @@ dependencies {
 ```
 
 
-###Proguard
+### Proguard
 
 mBeacon SDK는 Android 공식 proguard를 지원합니다.
 만약, proguard를 적용중이라면 아래와 같이 proguard-rules.pro에 추가합니다.
