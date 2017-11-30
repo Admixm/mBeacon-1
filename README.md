@@ -35,3 +35,5 @@ mBeacon SDK는 Android 공식 proguard를 지원합니다.
 -keep class net.admixm.mbeacon.** {*;}
 -ignorewarnings
 ```
+
+Thanks
