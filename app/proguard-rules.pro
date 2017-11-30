@@ -16,4 +16,5 @@
 #   public *;
 #}
 
-#-keep class net.admixm.mbeacon.** {*;}
+-keep class net.admixm.mbeacon.** {*;}
+-ignorewarnings

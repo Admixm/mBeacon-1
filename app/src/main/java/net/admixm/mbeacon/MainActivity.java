@@ -14,7 +14,7 @@ import net.admixm.mbeacon.parameters.ADMXParameters;
 
 public class MainActivity extends AppCompatActivity
 {
-    private String APP_NO = "3";
+    private String APP_NO = "23";
 
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity
 
         // 애드믹스엠 홀딩스에서 발급받은 어플리케이션 코드를 기입합니다.
         params.ApplicationCode = APP_NO;
-
-        ADMXBeaconAdServiceLib.setDebugMode( this, true );
 
         PermissionHelper.activatePermission( this, new Runnable( )
         {

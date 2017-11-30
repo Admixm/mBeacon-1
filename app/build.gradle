@@ -1,15 +1,8 @@
 apply plugin: 'com.android.application'
 
-repositories {
-    mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
-}
-
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "net.admixm.mbeacon.mbeaconsample"
@@ -18,13 +11,21 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:25.+'
 
-    compile (name: 'mBeacon-release', ext: 'aar')
-    compile 'com.google.code.gson:gson:2.3.1'
-    compile 'org.altbeacon:android-beacon-library:2.9@aar'
-    //compile 'net.admixm.mbeacon:core:1.0.0'
+    compile 'net.admixm.mbeacon:develop:+'
 }
