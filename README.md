@@ -90,7 +90,7 @@ private void initADMXLibrary( )
 ADMXLocationAgreementListener는 두개의 메쏘드를 위임하는 Interface로써 사용자 권한 동의 여부를 콜백합니다
 </br>
 </br>
-#### onSuccess
+### onSuccess
 
 사용자가 모든 권한에 동의 할 경우 호출 됩니다
 
@@ -102,7 +102,7 @@ ADMXLocationAgreementListener는 두개의 메쏘드를 위임하는 Interface�
 ```
 </br>
 </br>
-#### onDecline
+### onDecline
 
 사용자가 모든 권한에 동의하지 않을 경우 호출됩니다
 
@@ -124,7 +124,7 @@ ADMXLocationAgreementListener는 두개의 메쏘드를 위임하는 Interface�
 ADMXBeaconAdServiceLib는 세개의 static 메쏘드를 사용 할 수 있습니다
 </br>
 </br>
-#### init
+### init
 
 
 init 메쏘드는 시작하기에서 사용했던 메쏘드입니다
@@ -135,7 +135,7 @@ ADMXBeaconAdServiceLib.init( Activity, ADMXParameters, @nullable ADMXLocationAgr
 ```
 </br>
 </br>
-#### dispose
+### dispose
 
 dispose 메쏘드는 서비스를 종료시킬 수 있는 메쏘드입니다.
 
@@ -146,7 +146,7 @@ ADMXBeaconAdServiceLib.dispose( Context );
 ```
 </br>
 </br>
-#### checkSelfAllPermissions
+### checkSelfAllPermissions
 
 checkSelfAllPermissions 메쏘드는 사용자가 안드로이드 퍼미션에 동의하였는지를 검사하여 재 동의를 받게합니다
 
