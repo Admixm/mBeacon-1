@@ -49,6 +49,9 @@ MainActivity.java에 아래와 같은 메쏘드를 추가하고 onCreate()에서
 
 context가 만료되는 환경에서 init을 호출해서는 안됩니다.(: 스플래시 화면 등)
 
+앱_코드는 [플랫폼 붐](http://www.mbeacon.kr) 홈페이지에서 발급 받으실 수 있습니다.
+
+
 ```Android
 import net.admixm.mbeacon.ADMXBeaconAdServiceLib;
 import net.admixm.mbeacon.parameters.ADMXParameters;
