@@ -42,6 +42,7 @@ mBeacon SDK는 Android 공식 proguard를 지원합니다
 </br>
 </br>
 </br>
+
 ### Init
 
 MainActivity.java에 아래와 같은 메쏘드를 추가하고 onCreate()에서 호출합니다
@@ -124,6 +125,7 @@ ADMXLocationAgreementListener는 두개의 메쏘드를 위임하는 Interface�
 ADMXBeaconAdServiceLib는 세개의 static 메쏘드를 사용 할 수 있습니다
 </br>
 </br>
+
 ### init
 
 
@@ -135,6 +137,7 @@ ADMXBeaconAdServiceLib.init( Activity, ADMXParameters, @nullable ADMXLocationAgr
 ```
 </br>
 </br>
+
 ### dispose
 
 dispose 메쏘드는 서비스를 종료시킬 수 있는 메쏘드입니다.
@@ -146,6 +149,7 @@ ADMXBeaconAdServiceLib.dispose( Context );
 ```
 </br>
 </br>
+
 ### checkSelfAllPermissions
 
 checkSelfAllPermissions 메쏘드는 사용자가 안드로이드 퍼미션에 동의하였는지를 검사하여 재 동의를 받게합니다
